@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rel</title>
+    <style>
+        .menu-glowne a {
+            color: red;
+            text-decoration: none;
+        }
+        .menu-glowne a:hover {
+            color:green;
+            font-weight:
+        }
+        .menu-glowne a:active {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    Menu:
+    <ul class="menu-glowne">
+        <li><a id="gmail" href="#">Gmail</a></li>
+        <li><a id="wp" href="#">WP</a></li>
+        <li><a id="librus" href="#">Librus</a></li>
+        <li><a id="zs4" href="#">ZS4</a></li>
+        <li><a id="facebook" href="#">Facebook</a></li>
+    </ul>
+    <div id="tresc">Strona glowna - wybierz cos z menu</div>
+    <script>
+        var tresciStrony = {
+            gmail: "zaloguj sie do maila",
+            wp: "kto wogole wp jeszcze uzywa",
+            librus: "witamy na librusie zaloguj sie i przygotuj meliske",
+            zs4: "witaj w najgorszej szkole zycia",
+            facebook: "witam na portalu dla antyszczepionkowcow"
+        };
+
+        function clickMenu(event) {
+            console.log(event.target.id);
+            var trescDiv = document.getElementById("tresc")
+            trescDiv.innerHTML = tresciStrony[event.target.id];
+        }
+
+        var elementyMenu = document.querySelectorAll(".menu-glowne a");
+        for (var i=0; i<elementyMenu.length; i++) {
+            elementyMenu[i].onclick = clickMenu;
+        } 
+    </script>
+</body>
+</html>
